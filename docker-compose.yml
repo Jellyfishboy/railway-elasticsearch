@@ -12,9 +12,11 @@ services:
     environment:
       - TZ=America/Argentina/Buenos_Aires
       - discovery.type=single-node
-      - bootstrap.memory_lock=false
       - ES_JAVA_OPTS=-Xms1g -Xmx1g
       - xpack.security.enabled=false
+      - bootstrap.memory_lock=false
+      - es.bootstrap.seccomp=false
+      - es.bootstrap.ignore_system_bootstrap_checks=true
       - ELASTIC_PASSWORD=admin
       - ELASTICSEARCH_USERNAME=admin
       - ELASTICSEARCH_PASSWORD=admin
