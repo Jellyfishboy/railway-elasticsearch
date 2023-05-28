@@ -3,6 +3,6 @@
 !/config
 !/.gitignore
 !/docker-compose.yml
-!/_Dockerfile
+!/Dockerfile
 !/LICENSE
 !/README.md
