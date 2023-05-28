@@ -12,20 +12,11 @@ services:
     environment:
       - TZ=America/Argentina/Buenos_Aires
       - discovery.type=single-node
-      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
       - xpack.security.enabled=false
       - ELASTIC_PASSWORD=admin
       - ELASTICSEARCH_USERNAME=admin
       - ELASTICSEARCH_PASSWORD=admin
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-      nofile:
-        soft: 65536
-        hard: 65536
-    cap_add:
-      - IPC_LOCK
     volumes:
       - ./data/elasticsearch:/usr/share/elasticsearch/data
     networks:
