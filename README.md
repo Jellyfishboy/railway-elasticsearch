@@ -17,13 +17,8 @@ Deploy Elasticsearch on railway with one click.
 1. Click Deploy on Railway and setup your credentials in the environment variables
 
 ```bash
-GF_DEFAULT_INSTANCE_NAME=my-instance
-GF_SECURITY_ADMIN_USER=yourusername
-GF_SECURITY_ADMIN_PASSWORD=yourpassword
-GF_INSTALL_PLUGINS=grafana-piechart-panel,grafana-worldmap-panel,grafana-clock-panel,grafana-simple-json-datasource
-GF_LOG_MODE=console
-GF_VERSION=latest
-PORT=3000
+ELK_VERSION=8.3.3
+PORT=9200
 ```
 
 2. Wait for Build & Deployment to Finish
@@ -43,4 +38,4 @@ docker compose build
 docker compose up -d
 ```
 
-Connect to http://localhost:3000 use setup username & password from docker-compose file to login to grafana.
+Connect to http://localhost:9200 use setup username & password from docker-compose file to login to elk.
