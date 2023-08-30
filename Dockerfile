@@ -4,9 +4,12 @@ FROM docker.elastic.co/elasticsearch/elasticsearch:${ELK_VERSION}
 
 EXPOSE 9200
 
-# Copia el script de entrada
-COPY entrypoint.sh /usr/share/elasticsearch/entrypoint.sh
-RUN chmod +x /usr/share/elasticsearch/entrypoint.sh
+# Instalar curl para verificar que Elasticsearch haya iniciado
+RUN yum install -y curl
 
-# Usa el script como entrada
-ENTRYPOINT ["/usr/share/elasticsearch/entrypoint.sh"]
+# Copia el script de inicio
+COPY start_elasticsearch.sh /usr/share/elasticsearch/start_elasticsearch.sh
+RUN chmod +x /usr/share/elasticsearch/start_elasticsearch.sh
+
+# Establecer el script como el comando predeterminado
+CMD ["/usr/share/elasticsearch/start_elasticsearch.sh"]
