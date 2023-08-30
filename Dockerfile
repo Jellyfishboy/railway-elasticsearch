@@ -8,8 +8,8 @@ EXPOSE 9200
 RUN yum install -y curl
 
 # Copia el script de inicio
-COPY start_elasticsearch.sh /usr/share/elasticsearch/start_elasticsearch.sh
-RUN chmod +x /usr/share/elasticsearch/start_elasticsearch.sh
+COPY start_elasticsearch.sh /usr/share/elasticsearch/entrypoint.sh
+RUN chmod +x /usr/share/elasticsearch/entrypoint.sh
 
 # Establecer el script como el comando predeterminado
-CMD ["/usr/share/elasticsearch/start_elasticsearch.sh"]
+CMD ["/usr/share/elasticsearch/entrypoint.sh"]
