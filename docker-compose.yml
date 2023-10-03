@@ -20,6 +20,7 @@ services:
       - ELASTIC_PASSWORD=admin
       - ELASTICSEARCH_USERNAME=admin
       - ELASTICSEARCH_PASSWORD=admin
+      - vm.max_map_count=262144
     ulimits:
       memlock:
         soft: -1
